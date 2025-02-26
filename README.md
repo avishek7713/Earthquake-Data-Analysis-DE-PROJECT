@@ -4,13 +4,13 @@ This project focuses on **Earthquake Data Analysis**, utilizing **Azure Data Fac
 
 ## 📥 Data Ingestion  
 - The earthquake data is fetched from the **USGS API**: [USGS Earthquake API](https://earthquake.usgs.gov/fdsnws/event/1/#parameters).  
-- The JSON data is ingested into **ADF** via a **Databricks notebook** using Python’s `requests` library.  
+- The JSON data is ingested into **ADF** via a **notebook** using Python’s `requests` library.  
 - The dataset contains an object called **"features"**, where each **feature** represents an individual earthquake event.  
 - The extracted data is loaded into a **DataFrame**, with columns derived from `features` (geometry, id, properties, and type).  
 - This **Bronze Layer** data is then stored as a table in **Lakehouse**.  
 
 ## 🔄 Data Transformation (Silver Layer)  
-- A separate **Databricks notebook** processes the **Bronze Layer** data.  
+- A separate **notebook** processes the **Bronze Layer** data.  
 - The `geometry` and `properties` columns are split to extract **important metrics** for analysis.  
 - The **timestamp**, originally in milliseconds, is converted to **seconds** and further into **TimestampType**.  
 - The transformed data is saved as a table to serve the **Gold Layer**.  
@@ -34,7 +34,7 @@ This project focuses on **Earthquake Data Analysis**, utilizing **Azure Data Fac
 
 ### 🚀 Technologies Used  
 - **Azure Data Factory (ADF)**  
-- **Databricks (Notebooks for ETL Processing)**  
+- **(Notebooks for ETL Processing)**  
 - **Python (requests, pandas, reverse_geocoder)**  
 - **Microsoft Fabric (Lakehouse & Custom Environments)**  
 - **Power BI (Visualization & Reporting)**  
